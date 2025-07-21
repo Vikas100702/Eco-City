@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "738428582672",
+    "project_id": "eco-city-e8772",
+    "storage_bucket": "eco-city-e8772.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738428582672:android:e089d6e53d173d8f8c4395",
+        "android_client_info": {
+          "package_name": "com.example.eco_city_user"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBO8L9uxyAgujYH7i8ckAyE2zVh4b4ev_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
