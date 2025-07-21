@@ -31,8 +31,33 @@
 
   <title>eco_city_admin</title>
   <link rel="manifest" href="manifest.json">
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
   <script src="flutter_bootstrap.js" async></script>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBoZijpcqTEaNwsmwHjAWYi1CiX9LOAsh8",
+      authDomain: "eco-city-e8772.firebaseapp.com",
+      projectId: "eco-city-e8772",
+      storageBucket: "eco-city-e8772.firebasestorage.app",
+      messagingSenderId: "738428582672",
+      appId: "1:738428582672:web:b260f823a75167868c4395"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  </script>
 </body>
 </html>
