@@ -30,6 +30,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  eco_city_package:
+    # This is a local package dependency. It points to the eco_city_package
+    git:
+      # The URL of the repository where the eco_city_package is hosted.
+      url: https://github.com/Vikas100702/Eco-City.git # URL of the repository where the eco_city_package is hosted
+      # If the eco_city_package is in a subdirectory of the repository, specify the path
+      path: eco_city_package # path to the eco_city_package in the repository
+      # If you want to use a specific branch, you can specify it like this:
+      ref: main # optional: ensures you're pulling from main branch
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -61,7 +70,7 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^3.0.0
+  flutter_lints: ^6.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
