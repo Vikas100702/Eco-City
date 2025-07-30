@@ -3,68 +3,45 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AppColors {
-  // --- Common Color Palette (used by both themes where applicable) ---
-  static const Color primaryGreen = Color(
-    0xFF388E3C,
-  ); // Darker green for main accents
-  static const Color secondaryGreen = Color(
-    0xFF4CAF50,
-  ); // Brighter green, icons/highlights
 
-  // Status and accent colors - these are typically consistent across themes
-  static const Color infoBlue = Color(
-    0xFF2196F3,
-  ); // For "Total Reports" icon/info
-  static const Color pendingOrange = Color(0xFFFF9800); // For "Pending" status
+  static const Color green = Color(0xff4dcc45);//Color(0xFF34A853);// elevated buttons dark/light
+  static const Color dullLightGreen = Color(0xFF34A853);// Darker green for main accents
+  static const Color resolvedGreen = Color(0xFF66BB6A);
+  static const Color secondaryGreen = Color(0xFFF0FBF6); // Brighter green, icons/highlights
+  static const Color lightCyanAccent = Color(0xFFEFFAF8);// bg for light theme
+
+  static const Color whitishGrey = Color(0xFFECECF0);// UNSELECTED TAB
+  static const Color fillGrey = Color(0xFFF3F3F5);// textfields bg and search bar bg
+  static const Color white = Color(0xFFFFFFFF);//card bg light
+  static const Color lightBackgroundWhite = Color(0xFFF5F5F5);
+  static const Color lightLighterGrey = Color(0xFFBDBDBD);
+  static const Color lightGrey = Color(0xFF9E9E9E);
+
+  static const Color lightDarkGrey = Color(0xFF424242);
+  static const Color darkDarkerGrey = Color(0xFF2C2C2C);
+  static const Color darkDarkestGrey = Color(0xFF212121); // Primary text
+  static const Color slightDarkBlack = Color(0xFF121212);
+  static const Color black = Color(0xFF000000);
+
+  static const Color lightOrange = Color(0xFFFFEDD4); // For "Pending" status button bg
+  static const Color pendingOrange = Color(0xFFFF9800);
+  static const Color brightOrangeRed = Color(0xFFFF6900);// dashboard suffix icon bg for notification
   static const Color rejectRed = Color(0xFFF44336); // For "Reject" button
-  static const Color greenSuggestionsPurple = Color(
-    0xFF9C27B0,
-  ); // For "Green Suggestions" icon
-  static const Color inProgressBlue = Color(
-    0xFF42A5F5,
-  ); // Specific blue for "In Progress" status
-  static const Color resolvedGreen = Color(
-    0xFF66BB6A,
-  ); // Specific green for "Resolved" status
+  static const Color brown = Color(0xFF9F2D00);// // For "Pending" status button text
 
-  // --- Light Theme Specific Colors ---
-  static const Color lightBackgroundWhite = Color(
-    0xFFF5F5F5,
-  ); // General light background
-  static const Color lightPureWhite = Color(
-    0xFFFFFFFF,
-  ); // Card backgrounds, etc.
-  static const Color lightTextBlack = Color(0xFF212121); // Primary text
-  static const Color lightDarkGrey = Color(
-    0xFF424242,
-  ); // Secondary text/headers
-  static const Color lightGrey = Color(
-    0xFF9E9E9E,
-  ); // Placeholder text, dividers
-  static const Color lightLighterGrey = Color(
-    0xFFBDBDBD,
-  ); // Even lighter grey for subtle elements
+  static const Color inProgressBlue = Color(0xFF42A5F5); // Specific blue for "In Progress" status
+  static const Color infoBlue = Color(0xFF2196F3);
+  static const Color brightBlue = Color(0xFF2B7FFF);// dashboard suffix icon bg for reports
 
-  // --- Dark Theme Specific Colors ---
-  static const Color darkBackgroundBlack = Color(
-    0xFF121212,
-  ); // Deep dark background
-  static const Color darkCardGrey = Color(
-    0xFF1E1E1E,
-  ); // Slightly lighter grey for cards
-  static const Color darkAppBarGrey = Color(
-    0xFF2C2C2C,
-  ); // Darker grey for app bar
-  static const Color darkTextWhite = Color(
-    0xFFFFFFFF,
-  ); // Primary text in dark theme
-  static const Color darkTextLightGrey = Color(0xFFE0E0E0); // Secondary text
-  static const Color darkHintGrey = Color(
-    0xFF9E9E9E,
-  ); // Hint text in dark theme
-  static const Color darkDividerGrey = Color(
-    0xFF424242,
-  ); // Dividers and subtle borders
+  static const Color lightBlue = Color(0xFFC8D9F7); //bg for "in progress" status button
+  static const Color darkBlue = Color(0xFF193CB8);// text for "in progress" status button
+
+  static const Color lightGreen = Color(0xFFABFCE7);//bg for "resolved" status button
+  static const Color brightGreen = Color(0xFF00C951);// dashboard suffix icon bg for resolved reports
+  static const Color darkGreen = Color(0xFF016630);// text for "resolved" status button
+
+  static const Color brightPurple = Color(0xFFAD46FF);// dashboard suffix icon bg for GREEN SUGGESTION
+  static const Color greenSuggestionsPurple = Color(0xFF9C27B0); // For "Green Suggestions" icon
 }
 
 class CustomTheme {
@@ -73,49 +50,60 @@ class CustomTheme {
   static ThemeData lightTheme(BuildContext context) {
     return ThemeData(
       brightness: Brightness.light,
-      primaryColor: AppColors.primaryGreen,
-      canvasColor: AppColors.lightBackgroundWhite,
-      scaffoldBackgroundColor: AppColors.lightBackgroundWhite,
-      cardColor: AppColors.lightPureWhite,
+      primaryColor: AppColors.green,
+      canvasColor: AppColors.lightCyanAccent,
+      scaffoldBackgroundColor: AppColors.lightCyanAccent,
+      cardColor: AppColors.white,
 
       // Color scheme for general Material widgets
       colorScheme: ColorScheme.light(
-        primary: AppColors.primaryGreen,
-        secondary: AppColors.secondaryGreen,
-        surface: AppColors.lightPureWhite,
+        primary: AppColors.green,
+        secondary: AppColors.darkGreen,
+        surface: AppColors.lightCyanAccent,
+        surfaceContainerHighest:AppColors.white,
         // Card and sheet backgrounds
-        onPrimary: AppColors.lightPureWhite,
-        onSecondary: AppColors.lightPureWhite,
-        onSurface: AppColors.lightTextBlack,
+        onPrimary: AppColors.black,
+        onSecondary: AppColors.lightGreen,
+        onSurface: AppColors.darkDarkerGrey,
+        onSurfaceVariant: AppColors.black,
         error: AppColors.rejectRed,
-        onError: AppColors.lightPureWhite,
+        onError: AppColors.darkDarkestGrey,
       ),
 
       //App Bar Theme
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.lightPureWhite,
-        foregroundColor: AppColors.lightTextBlack, // Text color in AppBar
+        backgroundColor: AppColors.lightBackgroundWhite,
+        foregroundColor: AppColors.black, // Text color in AppBar
         elevation: 1.sp, // Slight shadow for AppBar
-        titleTextStyle: AppTextStyles.headingStyle(context),
+        titleTextStyle: AppTextStyles.headingLargeStyle(context),
       ),
 
       //Text style themes
       textTheme: TextTheme(
         //headings style
-        headlineLarge: AppTextStyles.headingStyle(context),
+        headlineLarge: AppTextStyles.headingLargeStyle(context),
+        headlineMedium: AppTextStyles.headingMediumStyle(context),
+        headlineSmall: AppTextStyles.headingSmallStyle(context),
 
         // subheadings style
-        titleMedium: AppTextStyles.subHeadingStyle(context),
+        titleLarge:AppTextStyles.subHeadingLargeStyle(context),
+        titleMedium: AppTextStyles.subHeadingMediumStyle(context),
+        titleSmall: AppTextStyles.subHeadingSmallStyle(context),
 
         // bodyTextStyle
-        bodyMedium: AppTextStyles.descriptionTextStyle(context),
-      ),
+          bodyLarge:AppTextStyles.descriptionLargeTextStyle(context),
+        bodyMedium: AppTextStyles.descriptionMediumTextStyle(context),
+        bodySmall:AppTextStyles.descriptionSmallTextStyle(context),
+
+        displayLarge: AppTextStyles.bodyTextStyle(context),
+          displaySmall:AppTextStyles.smallTextStyle(context) ,
+    ),
 
       //elevated button theme
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primaryGreen,
-          foregroundColor: AppColors.lightPureWhite,
+          backgroundColor: AppColors.green,
+          foregroundColor: AppColors.lightBackgroundWhite,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.r),
           ),
@@ -123,23 +111,25 @@ class CustomTheme {
               horizontal: 20.w,
               vertical: 12.h,
           ),
-          textStyle: AppTextStyles.descriptionTextStyle(context),//const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          textStyle: AppTextStyles.headingSmallStyle(context),//const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ),
 
       //text button theme
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
-          foregroundColor: AppColors.primaryGreen,
-          textStyle: AppTextStyles.bodyTextStyle(context),//const TextStyle(fontSize: 14),
+          foregroundColor: AppColors.darkDarkerGrey,
+          textStyle: AppTextStyles.headingSmallStyle(context),//const TextStyle(fontSize: 14),
         ),
       ),
 
       // outlined button theme
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
-          foregroundColor: AppColors.primaryGreen,
-          side: const BorderSide(color: AppColors.primaryGreen),
+          foregroundColor: AppColors.darkDarkerGrey,
+          side: const BorderSide(
+              color: AppColors.lightDarkGrey,
+          ),
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(8.r),
           ),
@@ -152,7 +142,7 @@ class CustomTheme {
 
       // card theme
       cardTheme: CardThemeData(
-        color: AppColors.lightPureWhite,
+        color: AppColors.white,
         elevation: 2.sp,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.r),
@@ -161,7 +151,7 @@ class CustomTheme {
 
       // Input Decoration Theme (for text fields)
       inputDecorationTheme: InputDecorationTheme(
-        fillColor: AppColors.lightPureWhite,
+        fillColor: AppColors.white,
         filled: true,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
@@ -169,20 +159,27 @@ class CustomTheme {
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
-          borderSide: const BorderSide(color: AppColors.lightLighterGrey),
+          borderSide: const BorderSide(
+              color: AppColors.lightLighterGrey,
+          ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
-          borderSide: const BorderSide(color: AppColors.primaryGreen, width: 2),
+          borderSide: const BorderSide(
+              color: AppColors.lightLighterGrey,
+              width: 2,
+          ),
         ),
-        hintStyle: TextStyle(color: AppColors.lightGrey),
+        hintStyle: AppTextStyles.descriptionSmallTextStyle(context).copyWith(
+            color: AppColors.lightDarkGrey,
+        ),
         contentPadding: EdgeInsets.symmetric(
           horizontal: 16.w,
           vertical: 12.h,
         ),
       ),
 
-      //ico theme
+      //icon theme
       iconTheme: IconThemeData(
         color: AppColors.lightDarkGrey, // Default icon color
         size: 24.sp,
@@ -194,49 +191,59 @@ class CustomTheme {
   static ThemeData darkTheme(BuildContext context) {
     return ThemeData(
       brightness: Brightness.dark,
-      primaryColor: AppColors.primaryGreen,
-      canvasColor: AppColors.darkBackgroundBlack,
-      scaffoldBackgroundColor: AppColors.darkBackgroundBlack,
-      cardColor: AppColors.darkCardGrey,
+      primaryColor: AppColors.green,
+      canvasColor: AppColors.black,
+      scaffoldBackgroundColor: AppColors.black,
+      cardColor: AppColors.darkDarkerGrey,
 
       // Color scheme for general Material widgets
       colorScheme: ColorScheme.dark(
-        primary: AppColors.primaryGreen,
-        secondary: AppColors.secondaryGreen,
-        surface: AppColors.darkCardGrey,
+        primary: AppColors.green,
+        secondary: AppColors.lightGreen,
+        surface: AppColors.darkDarkerGrey,
+        surfaceContainerHighest: AppColors.lightDarkGrey,
         // Card and sheet backgrounds
-        onPrimary: AppColors.darkTextWhite,
-        onSecondary: AppColors.darkTextWhite,
-        onSurface: AppColors.darkTextWhite,
+        onPrimary: AppColors.white,
+        onSecondary: AppColors.lightDarkGrey,
+        onSurface: AppColors.darkDarkestGrey,
         error: AppColors.rejectRed,
-        onError: AppColors.darkTextWhite,
+        onError: AppColors.lightGrey,
       ),
 
       //App Bar Theme
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.darkAppBarGrey,
-        foregroundColor: AppColors.darkTextWhite, // Text color in AppBar
+        backgroundColor: AppColors.black,
+        foregroundColor: AppColors.white, // Text color in AppBar
         elevation: 1.sp, // Slight shadow for AppBar
-        titleTextStyle: AppTextStyles.headingStyle(context),
+        titleTextStyle: AppTextStyles.headingLargeStyle(context),
       ),
 
       //Text style themes
       textTheme: TextTheme(
         //headings style
-        headlineLarge: AppTextStyles.headingStyle(context),
+        headlineLarge: AppTextStyles.headingLargeStyle(context),
+        headlineMedium: AppTextStyles.headingMediumStyle(context),
+        headlineSmall: AppTextStyles.headingSmallStyle(context),
 
         // subheadings style
-        titleMedium: AppTextStyles.subHeadingStyle(context),
+        titleLarge:AppTextStyles.subHeadingLargeStyle(context),
+        titleMedium: AppTextStyles.subHeadingMediumStyle(context),
+        titleSmall: AppTextStyles.subHeadingSmallStyle(context),
 
         // bodyTextStyle
-        bodyMedium: AppTextStyles.descriptionTextStyle(context),
+        bodyLarge:AppTextStyles.descriptionLargeTextStyle(context),
+        bodyMedium: AppTextStyles.descriptionMediumTextStyle(context),
+        bodySmall:AppTextStyles.descriptionSmallTextStyle(context),
+
+        displayLarge: AppTextStyles.bodyTextStyle(context),
+        displaySmall:AppTextStyles.smallTextStyle(context) ,
       ),
 
       //elevated button theme
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primaryGreen,
-          foregroundColor: AppColors.darkTextWhite,
+          backgroundColor: AppColors.green,
+          foregroundColor: AppColors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.r),
           ),
@@ -244,23 +251,25 @@ class CustomTheme {
             horizontal: 20.w,
             vertical: 12.h,
           ),
-          textStyle: AppTextStyles.descriptionTextStyle(context),//const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          textStyle: AppTextStyles.headingSmallStyle(context),//const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
         ),
       ),
 
       //text button theme
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
-          foregroundColor: AppColors.primaryGreen,
-          textStyle: AppTextStyles.bodyTextStyle(context),//const TextStyle(fontSize: 14),
+          foregroundColor: AppColors.white,
+          textStyle: AppTextStyles.headingSmallStyle(context),//const TextStyle(fontSize: 14),
         ),
       ),
 
       // outlined button theme
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
-          foregroundColor: AppColors.primaryGreen,
-          side: const BorderSide(color: AppColors.primaryGreen),
+          foregroundColor: AppColors.lightDarkGrey,
+          side: const BorderSide(
+              color: AppColors.lightGrey,
+          ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.r),
           ),
@@ -273,7 +282,7 @@ class CustomTheme {
 
       // card theme
       cardTheme: CardThemeData(
-        color: AppColors.darkCardGrey,
+        color: AppColors.white,
         elevation: 2.sp,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.r),
@@ -282,7 +291,7 @@ class CustomTheme {
 
       // Input Decoration Theme (for text fields)
       inputDecorationTheme: InputDecorationTheme(
-        fillColor: AppColors.darkAppBarGrey,
+        fillColor: AppColors.darkDarkerGrey,
         filled: true,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
@@ -291,26 +300,28 @@ class CustomTheme {
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
           borderSide: const BorderSide(
-              color: AppColors.darkDividerGrey,
+            color: AppColors.lightGrey,
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
-          borderSide: BorderSide(
-              color: AppColors.primaryGreen,
-              width: 2.sp,
+          borderSide: const BorderSide(
+            color: AppColors.lightGrey,
+            width: 2,
           ),
         ),
-        hintStyle: TextStyle(color: AppColors.darkHintGrey),
+        hintStyle: AppTextStyles.descriptionSmallTextStyle(context).copyWith(
+            color: AppColors.slightDarkBlack,
+        ),
         contentPadding: EdgeInsets.symmetric(
           horizontal: 16.w,
           vertical: 12.h,
         ),
       ),
 
-      //ico theme
+      //icon theme
       iconTheme: IconThemeData(
-        color: AppColors.darkTextLightGrey, // Default icon color
+        color: AppColors.white, // Default icon color
         size: 24.sp,
       ),
     );
