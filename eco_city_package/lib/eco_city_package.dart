@@ -8,7 +8,8 @@ class AppColors {
   static const Color dullLightGreen = Color(0xFF34A853);// Darker green for main accents
   static const Color resolvedGreen = Color(0xFF66BB6A);
   static const Color secondaryGreen = Color(0xFFF0FBF6); // Brighter green, icons/highlights
-  static const Color lightCyanAccent = Color(0xFFCEFBF4);// bg for light theme
+  static const Color lightCyanAccent = Color(0xFFCFF6F0);// bg for light theme
+
 
   static const Color whitishGrey = Color(0xFFECECF0);// UNSELECTED TAB
   static const Color fillGrey = Color(0xFFF3F3F5);// textfields bg and search bar bg
