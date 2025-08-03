@@ -8,7 +8,7 @@ class AppColors {
   static const Color dullLightGreen = Color(0xFF34A853);// Darker green for main accents
   static const Color resolvedGreen = Color(0xFF66BB6A);
   static const Color secondaryGreen = Color(0xFFF0FBF6); // Brighter green, icons/highlights
-  static const Color lightCyanAccent = Color(0xFFEFFAF8);// bg for light theme
+  static const Color lightCyanAccent = Color(0xFFCEFBF4);// bg for light theme
 
   static const Color whitishGrey = Color(0xFFECECF0);// UNSELECTED TAB
   static const Color fillGrey = Color(0xFFF3F3F5);// textfields bg and search bar bg
@@ -145,7 +145,7 @@ class CustomTheme {
         color: AppColors.white,
         elevation: 2.sp,
         shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.r),
+            borderRadius: BorderRadius.circular(16.r),
         ),
       ),
 
@@ -193,14 +193,14 @@ class CustomTheme {
       brightness: Brightness.dark,
       primaryColor: AppColors.green,
       canvasColor: AppColors.black,
-      scaffoldBackgroundColor: AppColors.black,
+      scaffoldBackgroundColor: AppColors.slightDarkBlack,
       cardColor: AppColors.darkDarkerGrey,
 
       // Color scheme for general Material widgets
       colorScheme: ColorScheme.dark(
         primary: AppColors.green,
         secondary: AppColors.lightGreen,
-        surface: AppColors.darkDarkerGrey,
+        surface: AppColors.slightDarkBlack,
         surfaceContainerHighest: AppColors.lightDarkGrey,
         // Card and sheet backgrounds
         onPrimary: AppColors.white,
