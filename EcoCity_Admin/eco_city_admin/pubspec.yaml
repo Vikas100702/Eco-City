@@ -30,16 +30,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  eco_city_package:
-    # This is a local package dependency. It points to the eco_city_package
-    git:
-      # The URL of the repository where the eco_city_package is hosted.
-      url: https://github.com/Vikas100702/Eco-City.git # URL of the repository where the eco_city_package is hosted
-      # If the eco_city_package is in a subdirectory of the repository, specify the path
-      path: eco_city_package # path to the eco_city_package in the repository
-      # If you want to use a specific branch, you can specify it like this:
-      ref: main # optional: ensures you're pulling from main branch
-
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -84,8 +74,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-assets:
-  - assets/
+  assets:
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
