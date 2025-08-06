@@ -12,7 +12,7 @@ class AppColors {
 
 
   static const Color whitishGrey = Color(0xFFECECF0);// UNSELECTED TAB
-  static const Color fillGrey = Color(0xFFF3F3F5);// textfields bg and search bar bg
+  static const Color fillGrey = Color(0xFFF3F3F5);// textFields bg and search bar bg
   static const Color white = Color(0xFFFFFFFF);//card bg light
   static const Color lightBackgroundWhite = Color(0xFFF5F5F5);
   static const Color lightLighterGrey = Color(0xFFBDBDBD);
