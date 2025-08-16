@@ -118,45 +118,38 @@ class _SignInScreenState extends State<SignInScreen> {
                 children: [
                   DefaultTabController(
                     length: 2,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: AppColors.whitishGrey,
-                        // Background for the unselected tabs
+                    child: TabBar(
+                      dividerColor: Colors.transparent,
+                      labelColor: colorScheme.onPrimary,
+                      unselectedLabelColor: colorScheme.onPrimary,
+                      labelStyle: textTheme.titleSmall,
+                      unselectedLabelStyle: textTheme.titleSmall,
+                      indicatorSize: TabBarIndicatorSize.tab,
+                      indicator: BoxDecoration(
+                        //shape: BoxShape.circle,
+                        color:theme.colorScheme.surfaceContainerHighest,//cardTheme.withValues(red:0.5,green: 0.5,blue: 0.5),
                         borderRadius: BorderRadius.circular(30.r),
-                      ),
-                      child: TabBar(
-                        dividerColor: Colors.transparent,
-                        labelColor: colorScheme.onPrimary,
-                        unselectedLabelColor: colorScheme.onPrimary,
-                        labelStyle: textTheme.titleSmall,
-                        unselectedLabelStyle: textTheme.titleSmall,
-                        indicatorSize: TabBarIndicatorSize.tab,
-                        indicator: BoxDecoration(
-                          //shape: BoxShape.circle,
-                          color: theme.cardColor,
-                          borderRadius: BorderRadius.circular(30.r),
-                          // boxShadow: [
-                          //   BoxShadow(
-                          //     color: colorScheme.onSurface,
-                          //     spreadRadius: 0.r,
-                          //     blurRadius: 4.r,
-                          //     offset: Offset(0.sp, 2.sp), // changes position of shadow
-                          //   ),
-                          // ],
-                        ),
-                        indicatorPadding: EdgeInsets.symmetric(
-                            vertical: 5.h, horizontal: 10.w),
-                        tabs: [
-                          Tab(
-                            icon: Icon(Icons.login),
-                            text: 'Sign In',
-                          ),
-                          Tab(
-                            icon: Icon(Icons.person_add_outlined),
-                            text: 'Sign Up',
+                        boxShadow: [
+                          BoxShadow(
+                            color: colorScheme.onSurface.withValues(red: 0.5.sp,green: 0.5.sp,blue: 0.5.sp),
+                            spreadRadius: 0.r,
+                            blurRadius: 2.r,
+                            offset: Offset(0.sp, 2.sp), // changes position of shadow
                           ),
                         ],
                       ),
+                      // indicatorPadding: EdgeInsets.symmetric(
+                      //     vertical: 5.h, horizontal: 10.w),
+                      tabs: [
+                        Tab(
+                          icon: Icon(Icons.login),
+                          text: 'Sign In',
+                        ),
+                        Tab(
+                          icon: Icon(Icons.person_add_outlined),
+                          text: 'Sign Up',
+                        ),
+                      ],
                     ),
                   ),
                   SizedBox(
@@ -174,7 +167,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                   Text(
                     "Enter your credentials to access the admin dashboard",
-                    style: textTheme.displayLarge,
+                    style: textTheme.displayLarge?.copyWith(color: colorScheme.onSurfaceVariant),
                   ),
                   SizedBox(
                     height: 20.h,

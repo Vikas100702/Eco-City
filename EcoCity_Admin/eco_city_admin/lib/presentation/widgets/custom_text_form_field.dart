@@ -114,7 +114,7 @@ class CustomTextField extends StatelessWidget {
           horizontal: horizontalContentPadding ?? 10.w,
           vertical: verticalContentPadding ?? 10.h,
         ),
-        fillColor: fillColor ?? Theme.of(context).colorScheme.surfaceContainerHigh,
+        fillColor: fillColor ?? Theme.of(context).colorScheme.surfaceContainerHighest,//surfaceContainerHigh
         filled: true,
         labelText: labelText,
         hintText: hintText,

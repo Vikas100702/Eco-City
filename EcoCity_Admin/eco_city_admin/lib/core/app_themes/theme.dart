@@ -9,6 +9,7 @@ class AppColors {
   static const Color resolvedGreen = Color(0xFF66BB6A);
   static const Color secondaryGreen = Color(0xFFF0FBF6); // Brighter green, icons/highlights
   static const Color lightCyanAccent = Color(0xFFeefaf6);//D9F6F0);// bg for light theme
+  static const Color lightCyanAccentDark = Color(0xffe9fbf6);//D9F6F0);// bg for light theme
 
   static const Color whitishGrey = Color(0xFFECECF0);// UNSELECTED TAB
   static const Color fillGrey = Color(0xFFF3F3F5);// textFields bg and search bar bg
@@ -17,8 +18,10 @@ class AppColors {
   static const Color lightLighterGrey = Color(0xFFBDBDBD);
   static const Color lightGrey = Color(0xFF9E9E9E);
 
+  static const Color lighterLightDarkGrey = Color(0xFF4E4E4E);
   static const Color lightDarkGrey = Color(0xFF424242);
-  static const Color darkDarkerGrey = Color(0xFF2C2C2C);
+  static const Color darkDarkerGrey = Color(0xFF393939);
+  static const Color darkDarkestGreylight = Color(0xFF2C2C2C);
   static const Color darkDarkestGrey = Color(0xFF212121); // Primary text
   static const Color slightDarkBlack = Color(0xFF121212);
   static const Color black = Color(0xFF000000);
@@ -61,7 +64,7 @@ class CustomTheme {
         primary: AppColors.green,
         secondary: AppColors.darkGreen,
         surface: AppColors.lightCyanAccent,
-        surfaceContainerHighest:AppColors.white,
+        surfaceContainerHighest:AppColors.lightCyanAccentDark,//white,
         // Card and sheet backgrounds
         onPrimary: AppColors.black,
         onSecondary: AppColors.lightGreen,
@@ -194,8 +197,8 @@ class CustomTheme {
       useMaterial3: true,
       brightness: Brightness.dark,
       primaryColor: AppColors.green,
-      canvasColor: AppColors.black,
-      scaffoldBackgroundColor: AppColors.black,
+      canvasColor: AppColors.slightDarkBlack,//black,
+      scaffoldBackgroundColor: AppColors.slightDarkBlack,//black,
       cardColor: AppColors.darkDarkerGrey,
 
       // Color scheme for general Material widgets
@@ -203,18 +206,19 @@ class CustomTheme {
         primary: AppColors.green,
         secondary: AppColors.lightGreen,
         surface: AppColors.darkDarkerGrey,
-        surfaceContainerHighest: AppColors.lightDarkGrey,
+        surfaceContainerHighest: AppColors.lighterLightDarkGrey,//lightDarkGrey,
         // Card and sheet backgrounds
         onPrimary: AppColors.white,
-        onSecondary: AppColors.lightDarkGrey,
-        onSurface: AppColors.darkDarkestGrey,
+        onSecondary: AppColors.darkDarkestGrey,
+        onSurface: AppColors.white,
+        onSurfaceVariant: AppColors.lightGrey,
         error: AppColors.rejectRed,
-        onError: AppColors.lightGrey,
+        onError: AppColors.white,
       ),
 
       //App Bar Theme
       appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.black,
+        backgroundColor: AppColors.darkDarkerGrey,
         foregroundColor: AppColors.white, // Text color in AppBar
         elevation: 1.sp, // Slight shadow for AppBar
         titleTextStyle: AppTextStyles.headingLargeStyle(context),
@@ -260,7 +264,7 @@ class CustomTheme {
       //text button theme
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
-          foregroundColor: AppColors.white,
+          foregroundColor: AppColors.lightGrey,
           textStyle: AppTextStyles.headingSmallStyle(context),//const TextStyle(fontSize: 14),
         ),
       ),
@@ -268,7 +272,7 @@ class CustomTheme {
       // outlined button theme
       outlinedButtonTheme: OutlinedButtonThemeData(
         style: OutlinedButton.styleFrom(
-          foregroundColor: AppColors.lightDarkGrey,
+          foregroundColor: AppColors.lightGrey,
           side: const BorderSide(
             color: AppColors.lightGrey,
           ),
@@ -284,7 +288,7 @@ class CustomTheme {
 
       // card theme
       cardTheme: CardThemeData(
-        color: AppColors.white,
+        color: AppColors.darkDarkestGreylight,//lightDarkGrey,//darkDarkerGrey,
         elevation: 2.sp,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.r),
@@ -293,7 +297,7 @@ class CustomTheme {
 
       // Input Decoration Theme (for text fields)
       inputDecorationTheme: InputDecorationTheme(
-        fillColor: AppColors.darkDarkerGrey,
+        fillColor: AppColors.darkDarkestGrey,
         filled: true,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
@@ -302,18 +306,18 @@ class CustomTheme {
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
           borderSide: const BorderSide(
-            color: AppColors.lightGrey,
+            color: AppColors.lightDarkGrey,
           ),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(8.r),
           borderSide: const BorderSide(
-            color: AppColors.lightGrey,
+            color: AppColors.green,
             width: 2,
           ),
         ),
         hintStyle: AppTextStyles.descriptionSmallTextStyle(context).copyWith(
-          color: AppColors.slightDarkBlack,
+          color: AppColors.lightGrey,
         ),
         contentPadding: EdgeInsets.symmetric(
           horizontal: 16.w,
